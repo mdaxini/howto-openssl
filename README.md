@@ -47,3 +47,4 @@ The client sends a PING to the server, and the server displays it.
 
 ===
 
+### Check out the [wiki](https://github.com/mdaxini/howto-openssl/wiki) for more details.
