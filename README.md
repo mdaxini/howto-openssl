@@ -10,15 +10,19 @@ A detailed treatise on the technical choices made for this example, and more det
 ## Running the server and client
 
 To compile, run from the directory with the Makefile:
+
 	make
 
 To clean artifacts from compile, run from the directory with the Makefile:
+
 	make clean
 
 Run the server (accepts connection on localhost:1112):
+
 	src/ssl_server
 
 Run the client (connects to server on localhost:1112:
+
 	src/ssl_client
 
 The server and the client use the server.crt and server.key from the src folder.
