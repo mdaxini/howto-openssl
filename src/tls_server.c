@@ -20,7 +20,7 @@
 #include <openssl/ssl.h>
 #include <openssl/err.h>
 
-#include "sslutil.h"
+#include "tlsutil.h"
 
 #define CERTF "src/server.crt"
 #define KEYF  "src/server.key"

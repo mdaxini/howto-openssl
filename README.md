@@ -19,18 +19,18 @@ To clean artifacts from compile, run from the directory with the Makefile:
 
 Run the server (accepts connection on localhost:1112):
 
-	src/ssl_server
+	src/tls_server
 
 Run the client (connects to server on localhost:1112:
 
-	src/ssl_client
+	src/tls_client
 
 The server and the client use the server.crt and server.key from the src folder.
 
 ===
 ## Testing the server and client independently
 ### Testing the server
-	src/ssl_server
+	src/tls_server
 
 	openssl s_client -msg -verify -tls1_2  -state -showcerts -cert src/server.crt -key src/server.key -connect localhost:1112
 
@@ -41,7 +41,7 @@ The s_client command connects to the TLS 1.2 speaking server on localhost and po
 ### Testing the client
 	openssl s_server -msg -verify -tls1_2 -state -cert src/server.crt -key src/server.key -accept 1112
 
-	src/ssl_client
+	src/tls_client
 
 The client sends a PING to the server, and the server displays it.
 
