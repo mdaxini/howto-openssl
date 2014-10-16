@@ -123,7 +123,7 @@ int main() {
 
     /* -------------------------------------------------------- */
     /* Optional section of code, not required for data exchange */
-    printf("Version: %s\n", SSL_get_version(ssl));
+    printf("Client Version: %s\n", SSL_get_version(ssl));
 
     /* The cipher negotiated and being used */
     printf("Using cipher %s\n", SSL_get_cipher(ssl));
