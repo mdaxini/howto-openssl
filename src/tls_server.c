@@ -128,6 +128,7 @@ int main() {
     CHK_NULL(ssl);
 
     SSL_set_fd(ssl, sd);
+    SSL_set_accept_state(ssl);
     err = SSL_accept(ssl);
     CHK_SSL(err);
 
@@ -135,6 +136,11 @@ int main() {
         ERR_print_errors_fp(stderr);
         exit(8);
     }
+
+    /* -------------------------------------------------------- */
+    /* Optional section of code, not required for data exchange */
+
+    printf("Version: %s\n", SSL_get_version(ssl));
 
     /* The cipher negotiated and being used */
     printf("Using cipher %s\n", SSL_get_cipher(ssl));

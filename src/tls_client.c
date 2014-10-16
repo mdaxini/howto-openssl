@@ -110,7 +110,9 @@ int main() {
 
     ssl = SSL_new(ctx);
     CHK_NULL(ssl);
+
     SSL_set_fd(ssl, sd);
+    SSL_set_connect_state(ssl);
     err = SSL_connect(ssl);
     CHK_SSL(err);
 
@@ -121,6 +123,7 @@ int main() {
 
     /* -------------------------------------------------------- */
     /* Optional section of code, not required for data exchange */
+    printf("Version: %s\n", SSL_get_version(ssl));
 
     /* The cipher negotiated and being used */
     printf("Using cipher %s\n", SSL_get_cipher(ssl));
