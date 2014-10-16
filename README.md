@@ -48,3 +48,10 @@ The client sends a PING to the server, and the server displays it.
 ===
 
 ### Check out the [wiki](https://github.com/mdaxini/howto-openssl/wiki) for more details.
+
+===
+
+## License
+
+Licensed under the Apache License, Version 2.0: http://www.apache.org/licenses/LICENSE-2.0
+
