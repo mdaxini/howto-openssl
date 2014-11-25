@@ -47,8 +47,8 @@ int main() {
     CHK_NULL(ctx);
 
     /* ---------------------------------------------------------------- */
-    /* Cipher AES256-GCM-SHA384 - good performance with AES-NI support. */
-    if (!SSL_CTX_set_cipher_list(ctx, "AES256-GCM-SHA384")) {
+    /* Cipher AES128-GCM-SHA256 or AES256-GCM-SHA384 */
+    if (!SSL_CTX_set_cipher_list(ctx, "AES128-GCM-SHA256")) {
         printf("Could not set cipher list");
         exit(1);
     }
@@ -81,7 +81,7 @@ int main() {
         exit(7);
     }
 
-    /* Enable client certificate verification. Enable before accepting connections. */
+    /* Enable server certificate verification. Enable before accepting connections. */
     SSL_CTX_set_verify(ctx, SSL_VERIFY_PEER | SSL_VERIFY_FAIL_IF_NO_PEER_CERT |
     SSL_VERIFY_CLIENT_ONCE, 0);
 

@@ -4,7 +4,7 @@ CFLAGS  += -std=c99 -g3 -Wall
 OFLAGS  += -O0
 LDFLAGS += -L/usr/local/lib -lssl -lcrypto
 
-APPS = src/tls_server src/tls_client
+APPS = src/tls_server src/tls_client src/epoll_tls_client
 
 .SILENT:
 
@@ -17,6 +17,10 @@ src/tls_server: src/tls_server.c
 src/tls_client: src/tls_client.c
 	echo "CC src/tls_client.c"
 	$(CC) $(CFLAGS) $(OFLAGS) src/tls_client.c $(LDFLAGS) -o $@
+
+src/epoll_tls_client: src/epoll_tls_client.c
+	echo "CC src/epoll_tls_client.c"
+	$(CC) $(CFLAGS) $(OFLAGS) src/epoll_tls_client.c $(LDFLAGS) -o $@
 
 clean:
 	echo "Deleting -> rm -f $(APPS)"

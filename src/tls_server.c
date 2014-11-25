@@ -55,8 +55,9 @@ int main() {
     }
 
     /* ---------------------------------------------------------------- */
-    /* Cipher AES256-GCM-SHA384 - good performance with AES-NI support. */
-    if (!SSL_CTX_set_cipher_list(ctx, "AES256-GCM-SHA384")) {
+    /* Cipher AES128-GCM-SHA256 or AES256-GCM-SHA384 */
+    //if (!SSL_CTX_set_cipher_list(ctx, "AES256-GCM-SHA384")) {
+    if (!SSL_CTX_set_cipher_list(ctx, "AES128-GCM-SHA256")) {
         printf("Could not set cipher.");
         exit(3);
     }
